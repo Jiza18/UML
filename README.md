@@ -5,5 +5,6 @@
 ```mermaid
 classDiagram
 class Entrenador {
-  
+  +int age
 }
+```
