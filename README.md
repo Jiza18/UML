@@ -1,6 +1,10 @@
 # Diagrama de clases
 
-## Herencia
+## Relaciones
+
+### Herencia
+
+ La herencia permite crear clases que reutilizan, extienden y modifican el comportamiento definido en otras clases.
 
 ```mermaid
 classDiagram
@@ -19,23 +23,65 @@ class Baloncesto {
     + double alturaAro
 }
 ```
+ 
+### Realización
 
-## Realización 
+El concepto de realización refiere la implementación de un interfaz por parte de una clase. Una interfaz es un medio común para que los objetos no relacionados se comuniquen entre sí. Estas son definiciones de métodos y valores sobre los cuales los objetos están de acuerdo para cooperar. 
 
 ```mermaid
 classDiagram
-interface Entrenarmiento {
+Ciclismo ..|> Entrenamiento
+Baloncesto ..|> Entrenamiento
+class Entrenamiento {
     +void calentar(time : String): String
     +void entrenar(): String
     +void estirar(): String
 }
-class Ciclismo implements Entrenamiento {
+class Ciclismo {
     + String ejercicios
     + int participantes
+
+    +void calentar(time : String): String
+    +void entrenar(): String
+    +void estirar(): String
 }
-class Baloncesto implements Entrenamiento {
+class Baloncesto {
     + String equipo
     + double alturaAro
+
+    +void calentar(time : String): String
+    +void entrenar(): String
+    +void estirar(): String
 }
 ```
 
+### Agreagacion
+
+La agregación es un tipo de asociación que indica que una clase es parte de otra clase (composición débil).
+
+```mermaid
+classDiagram
+class Ciclista{
+    +String algo
+}
+class Entrenador{
+    +String algo
+}
+Ciclista --o Entrenador
+```
+
+### Composicion
+
+La composición significa utlizar objetos dentro de otros objetos.
+
+```mermaid
+classDiagram
+Rutina --* Entrenamiento
+class Entrenamiento{
+    List<Rutina> rutinas
+}
+class Rutina{
+        -int time
+        -List<String> ejercicios
+    }
+```
