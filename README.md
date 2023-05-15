@@ -85,3 +85,10 @@ class Rutina{
         -List<String> ejercicios
     }
 ```
+
+# Diagrame de secuencia
+
+```mermaid
+sequenceDiagram
+Profesor ->> Kahoot: New Game
+```
