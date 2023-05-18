@@ -92,3 +92,13 @@ class Rutina{
 sequenceDiagram
 Profesor ->> Kahoot: New Game
 ```
+
+# Diagrama de actividad
+
+```mermaid
+flowchart TD
+pd[Acedder a Login] --> dv{Opcion?}
+dv -->|Acceder| idatos[Introducir datos] 
+dv -->|Registrarse| pagReg[Acceder a Registro]
+dv -->|Contraseña| pagCon[Acceder a pag]
+```
