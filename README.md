@@ -88,6 +88,8 @@ class Rutina{
 
 # Diagrama de secuencia
 
+Los diagramas de secuencia son una solución de modelado dinámico popular en UML porque se centran específicamente en líneas de vida o en los procesos y objetos que coexisten simultáneamente, y los mensajes intercambiados entre ellos para ejecutar una función antes de que la línea de vida termine.
+
 ```mermaid
 sequenceDiagram
 Profesor ->> Kahoot: New Game
@@ -109,6 +111,8 @@ end
 
 # Diagrama de actividad
 
+El diagrama de actividades es un tipo de diagrama dentro del lenguaje unificado de modelado (UML). Este lenguaje de modelado gráfico define formas para la representación de la programación orientada a objetos; en concreto, especifica 14 tipos de diagramas.
+
 ```mermaid
 flowchart TD
 pd[Aceder a Login] --> dv{Opcion?}
@@ -120,6 +124,8 @@ dv -->|Restablecer contraseña| pagCon[Acceder al proceso]
 ```
 
 # Diagrama de estados
+
+Un diagrama de estados, en ocasiones conocido como diagrama de máquina de estados, es un tipo de diagrama de comportamiento en el Lenguaje Unificado de Modelado (UML) que muestra transiciones entre diversos objetos.
 
 ```mermaid
 stateDiagram-v2
