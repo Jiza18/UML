@@ -86,7 +86,7 @@ class Rutina{
     }
 ```
 
-# Diagrame de secuencia
+# Diagrama de secuencia
 
 ```mermaid
 sequenceDiagram
@@ -100,5 +100,7 @@ flowchart TD
 pd[Acedder a Login] --> dv{Opcion?}
 dv -->|Acceder| idatos[Introducir datos] 
 dv -->|Registrarse| pagReg[Acceder a Registro]
-dv -->|Contraseña| pagCon[Acceder a pag]
+dv -->|Contraseña| pagCon[Acceder a pagina]
 ```
+
+#
