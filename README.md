@@ -94,6 +94,17 @@ Profesor ->> Kahoot: New Game
 Kahoot ->> Profesor: Code
 Profesor ->> Alumno: Code
 Alumno ->> Kahoot: Username
+Kahoot ->> Profesor: Ready
+Profesor ->> Kahoot: Start Game
+loop Every round
+Kahoot ->> Profesor: Question
+Profesor ->> Alumno: Question
+Alumno ->> Kahoot: Answer
+Kahoot ->> Profesor: Results
+Kahoot ->> Alumno: Results
+Profesor ->> Kahoot: Next
+Kahoot ->> Profesor: Next Question
+end
 ```
 
 # Diagrama de actividad
