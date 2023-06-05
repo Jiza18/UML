@@ -91,16 +91,36 @@ class Rutina{
 ```mermaid
 sequenceDiagram
 Profesor ->> Kahoot: New Game
+Kahoot ->> Profesor: Code
+Profesor ->> Alumno: Code
+Alumno ->> Kahoot: Username
 ```
 
 # Diagrama de actividad
 
 ```mermaid
 flowchart TD
-pd[Acedder a Login] --> dv{Opcion?}
-dv -->|Acceder| idatos[Introducir datos] 
+pd[Aceder a Login] --> dv{Opcion?}
+dv -->|Acceder| idatos[Introducir datos] --> dv2{Datos correctos?}
+dv2 -->|Si|susLogin[Acceder a la pagina]
+dv2 -->|No|failLogin[Reintetar]
 dv -->|Registrarse| pagReg[Acceder a Registro]
-dv -->|Contraseña| pagCon[Acceder a pagina]
+dv -->|Restablecer contraseña| pagCon[Acceder al proceso]
 ```
 
-#
+# Diagrama de estados
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Agachado
+    Agachado --> Idle
+    Saltando --> Idle
+    Idle --> Caminando
+    Idle --> Saltando
+    Caminando --> Idle
+    Caminando --> Corriendo
+    Corriendo --> Idle
+    Corriendo --> Saltando
+    Caminando --> Agachado
+```
