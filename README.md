@@ -141,3 +141,45 @@ stateDiagram-v2
     Corriendo --> Saltando
     Caminando --> Agachado
 ```
+
+```mermaid
+graph TD
+  A[Azure VM]
+  A --> B[Docker Container: Backend]
+  A --> C[Docker Container: Frontend]
+  A --> D[Docker Container: Database]
+  E[User]
+  E --> C : HTTP Request
+  C --> B : API Call
+  B --> D : Query
+  D --> B : Response
+  B --> C : API Response
+  C --> E : HTTP Response
+  ```
+
+```plantuml
+@startuml
+skinparam componentStyle rectangle
+
+node "Azure VM" {
+    node "Docker Container: Backend" {
+        [Java Spring Boot Application]
+    }
+    node "Docker Container: Frontend" {
+        [Ionic Vue Application]
+    }
+    node "Docker Container: Database" {
+        [PostgreSQL Database]
+    }
+}
+
+actor "User" as user
+
+user -> [Ionic Vue Application] : HTTP Request
+[Ionic Vue Application] -> [Java Spring Boot Application] : API Call
+[Java Spring Boot Application] -> [PostgreSQL Database] : Query
+[PostgreSQL Database] -> [Java Spring Boot Application] : Response
+[Java Spring Boot Application] -> [Ionic Vue Application] : API Response
+[Ionic Vue Application] -> user : HTTP Response
+
+@enduml
